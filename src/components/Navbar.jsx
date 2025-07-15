@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -10,7 +10,6 @@ function Navbar() {
     setOpenMenu(openMenu === menuName ? null : menuName);
   };
 
-  // Detect scroll
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
@@ -55,7 +54,7 @@ function Navbar() {
             </Link>
           </li>
 
-          {/* Dropdown Builder */}
+        
           {[
             {
               label: "Profil",

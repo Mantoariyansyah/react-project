@@ -64,7 +64,7 @@ function Home() {
       </div>
 
       {/* content3 */}
-      <div className="relative w-full pb-20 px-20">
+      <div className="relative w-full">
 
         <img src="/src/img/gambar2.png" alt="Background1" className="w-full h-auto" />
 
@@ -100,7 +100,7 @@ function Home() {
       </div>
 
       {/* content4 */}
-      <div className="pb-20 flex gap-24 px-20">
+      <div className="pb-20 pt-20 flex gap-24 px-20 bg-[#D9D9D9]">
         <div className="w-[500px]">
           <img src="/src/img/gambar3.png" alt="" className="w-full" />
         </div>
@@ -140,8 +140,22 @@ function Home() {
           </div>
         </div>
       </div>
-
+      
       {/* content5 */}
+       <div className="pb-20 px-20 pt-16">
+
+          <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
+            Proses Pendaftaran Siswa Baru <br /> <span className="relative inline-block after:absolute after:left-28 after:bottom-[-12px] after:h-[4px] after:w-[6ch] after:bg-[#FEF600] after:rounded-full">
+              SMAS Kristen Bethel Jakarta
+            </span>
+          </h1>
+
+       <div className="flex items-center justify-center">
+        <img src="/src/img/gambar25.png" alt="" className="w-[50%]" />
+       </div>
+      </div>
+
+      {/* content6 */}
       <div className="pb-20 px-20">
 
           <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
@@ -196,7 +210,7 @@ function Home() {
         </div>
       </div>
 
-      {/* content6 */}
+      {/* content7 */}
       <div className="pb-20 flex items-center justify-center px-20">
         <div>
           <h1 className="text-2xl font-bold mb-6 text-[#101524]">

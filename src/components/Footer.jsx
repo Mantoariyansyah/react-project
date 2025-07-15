@@ -1,6 +1,25 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Footer() {
+
+     useEffect(() => {
+        const handleScroll = () => {
+          setIsScrolled(window.scrollY > 0);
+          setOpenMenu(null);
+        };
+    
+        const handleClickOutside = () => setOpenMenu(null);
+    
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("click", handleClickOutside);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+          window.removeEventListener("click", handleClickOutside);
+        };
+      }, []);
+
     return (
         <footer className="bg-[#0B0F1A] text-white pt-10 pb-6 px-32">
             <div className="max-w-screen-xl mx-auto grid grid-cols-3 gap-16">
@@ -41,12 +60,12 @@ function Footer() {
                 <div className="pl-20">
                     <h3 className="text-lg font-bold text-[#FEF600] mb-4">Jelajah</h3>
                     <ul className="space-y-2 text-sm font-medium">
-                        <li><a href="#" className="hover:text-[#FEF600]">Home</a></li>
-                        <li><a href="#" className="hover:text-[#FEF600]">Profil Sekolah</a></li>
-                        <li><a href="#" className="hover:text-[#FEF600]">Akademik</a></li>
-                        <li><a href="#" className="hover:text-[#FEF600]">Berita</a></li>
-                        <li><a href="#" className="hover:text-[#FEF600]">Galeri</a></li>
-                        <li><a href="#" className="hover:text-[#FEF600]">Fasilitas & Layanan</a></li>
+                        <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="hover:text-[#FEF600]">Home</Link></li>
+                        <li><Link to="/profil" className="hover:text-[#FEF600]">Profil Sekolah</Link></li>
+                        <li><Link to="/jurusan" className="hover:text-[#FEF600]">Akademik</Link></li>
+                        <li><Link to="/berita" className="hover:text-[#FEF600]">Berita</Link></li>
+                        <li><Link to="/galeri" className="hover:text-[#FEF600]">Galeri</Link></li>
+                        <li><Link to="/sarana" className="hover:text-[#FEF600]">Fasilitas & Layanan</Link></li>
                     </ul>
                 </div>
 
