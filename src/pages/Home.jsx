@@ -196,7 +196,7 @@ function Home() {
 
               <div className="flex items-center justify-center mt-4">
                 <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
-                  Baca Selengkapnya
+                    <Link to="/isiberita">Baca Selengkapnya</Link>
                 </button>
               </div>
             </div>
@@ -205,7 +205,7 @@ function Home() {
 
         <div className="mt-12 flex items-center justify-center">
           <button className="bg-[#101524] hover:bg-gray-800 text-white px-8 py-2 rounded-lg font-semibold text-md">
-            Lebih Lanjut
+            <Link to="/berita">Lebih Lanjut</Link>
           </button>
         </div>
       </div>
@@ -267,7 +267,7 @@ function Home() {
 
           <div className="mt-7 flex items-center justify-center">
             <button className="bg-[#101524] hover:bg-gray-800 text-md text-white px-8 py-2 rounded-lg font-semibold">
-              Selengkapnya
+              <Link to="/galeri">Selengkapnya</Link>
             </button>
           </div>
         </div>
