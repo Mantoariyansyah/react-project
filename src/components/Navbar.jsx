@@ -27,7 +27,7 @@ function Navbar() {
     };
   }, []);
 
-  const bgNavbar = isScrolled ? "bg-black text-[#FEF600]" : "bg-white text-black";
+  const bgNavbar = isScrolled ? "bg-[#101524] text-[#FEF600]" : "bg-white text-black";
   const hoverLink = isScrolled
     ? "hover:bg-[#FEF600] hover:text-black"
     : "hover:bg-[#101524] hover:text-white";
@@ -84,7 +84,7 @@ function Navbar() {
               label: "Kegiatan",
               name: "kegiatan",
               items: [
-                { to: "/fasilitas/perpustakaan", label: "OSIS Sekolah" },
+                { to: "/osis", label: "OSIS Sekolah" },
                 { to: "/ekstrakulikuler", label: "Ekstrakulikuler" },
               ],
               width: "w-56",

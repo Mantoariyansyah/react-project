@@ -25,6 +25,7 @@ import LayananAlumni from "./pages/LayananAlumni";
 import Kontak from "./pages/Kontak";
 import LayananAdministrasi from "./pages/LayananAdministrasi";
 import ScrollTotop from "./components/ScrollTotop";
+import Osis from "./pages/Osis";
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
         <Route path="/berita" element={<Berita />} />
         <Route path="/isiberita" element={<IsiBerita />} />
         <Route path="/galeri" element={<Galeri />} />
+        <Route path="/osis" element={<Osis />} />
         <Route path="/ekstrakulikuler" element={<Ekstrakulikuler />} />
         <Route path="/sarana" element={<Sarana />} />
         <Route path="/layananadministrasi" element={<LayananAdministrasi />} />
