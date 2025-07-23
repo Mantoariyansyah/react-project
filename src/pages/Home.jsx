@@ -1,5 +1,7 @@
 import hero from "../assets/hero-bg.jpg";
 import { Link } from "react-router-dom";
+import gambar1 from "/src/img/gambar1.png"; // sesuaikan path
+
 
 function Home() {
   return (
@@ -37,7 +39,7 @@ function Home() {
       <div className="flex px-20 gap-10 pb-20 pt-16">
 
         <div className="w-1/2">
-          <img src="/src/img/gambar1.png" alt="Gambar Kepala Sekolah" className="w-full shadow" />
+         <img src={gambar1} alt="gambar1" className="w-full shadow" />
         </div>
 
 
