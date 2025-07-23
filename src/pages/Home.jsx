@@ -248,36 +248,36 @@ function Home() {
             </span>
           </h1>
           <div className="relative mt-10">
-            <img src="/src/img/gambar8.png" alt="" className="w-72" />
+            <img src={gambar8} alt="" className="w-72" />
             <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center p-20 space-y-5">
               <div className="flex items-center space-x-4">
-                <img src="/src/img/icon10.png" alt="" className="w-5 h-5" />
+                <img src={icon10} alt="" className="w-5 h-5" />
                 <h1 className="text-[#FEF600] font-bold">Beriman</h1>
               </div>
               <div className="flex items-center space-x-4">
-                <img src="/src/img/icon10.png" alt="" className="w-5 h-5" />
+                <img src={icon10} alt="" className="w-5 h-5" />
                 <h1 className="text-[#FEF600] font-bold">Berprestasi</h1>
               </div>
               <div className="flex items-center space-x-4">
-                <img src="/src/img/icon10.png" alt="" className="w-5 h-5" />
+                <img src={icon10} alt="" className="w-5 h-5" />
                 <h1 className="text-[#FEF600] font-bold">Melayani</h1>
               </div>
             </div>
           </div>
 
           <div className="relative mt-4 mx-20">
-            <img src="/src/img/gambar7.png" alt="" className="w-72" />
+            <img src={gambar7} alt="" className="w-72" />
             <div className="absolute top-0 left-0 w-full h-full flex flex-col items-start justify-center p-20 space-y-5">
               <div className="flex items-center space-x-4">
-                <img src="/src/img/icon10.png" alt="" className="w-5 h-5" />
+                <img src={icon10} alt="" className="w-5 h-5" />
                 <h1 className="text-[#FEF600] font-bold">Berkarakter</h1>
               </div>
               <div className="flex items-center space-x-4">
-                <img src="/src/img/icon10.png" alt="" className="w-5 h-5" />
+                <img src={icon10} alt="" className="w-5 h-5" />
                 <h1 className="text-[#FEF600] font-bold">Mandiri</h1>
               </div>
               <div className="flex items-center space-x-4">
-                <img src="/src/img/icon10.png" alt="" className="w-5 h-5" />
+                <img src={icon10} alt="" className="w-5 h-5" />
                 <h1 className="text-[#FEF600] font-bold">Berkolaborasi</h1>
               </div>
             </div>
@@ -286,12 +286,12 @@ function Home() {
 
         <div>
           <div className="grid grid-cols-3 gap-2">
-            <img src="/src/img/gambar9.png" alt="" className="w-full" />
-            <img src="/src/img/gambar10.png" alt="" className="w-full" />
-            <img src="/src/img/gambar11.png" alt="" className="w-full" />
-            <img src="/src/img/gambar12.png" alt="" className="w-full" />
-            <img src="/src/img/gambar13.png" alt="" className="w-full" />
-            <img src="/src/img/gambar14.png" alt="" className="w-full" />
+            <img src={gambar9} alt="" className="w-full" />
+            <img src={gambar10} alt="" className="w-full" />
+            <img src={gambar11} alt="" className="w-full" />
+            <img src={gambar12} alt="" className="w-full" />
+            <img src={gambar13} alt="" className="w-full" />
+            <img src={gambar14} alt="" className="w-full" />
           </div>
 
           <div className="mt-7 flex items-center justify-center">
