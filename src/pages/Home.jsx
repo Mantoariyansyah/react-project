@@ -24,7 +24,7 @@ import gambar11 from "../img/gambar11.png";
 import gambar12 from "../img/gambar12.png";
 import gambar13 from "../img/gambar13.png";
 import gambar14 from "../img/gambar14.png";
-import icon10 from "../img/icon10.png"; 
+import icon10 from "../img/icon10.png";
 
 
 function Home() {
@@ -39,7 +39,7 @@ function Home() {
           backgroundSize: "100% auto",
         }}
       >
-      
+
         <div className="absolute inset-0 flex items-center px-20">
           <div className="text-white max-w-2xl">
             <p className="uppercase text-white font-bold mb-2 tracking-wider opacity-60">Home</p>
@@ -51,8 +51,8 @@ function Home() {
               <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-4 py-2 rounded-lg font-semibold text-md">
                 Hubungi Kami
               </button>
-              <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-5 py-2 rounded-lg font-semibold text-md"><Link to="/daftarsiswa"> 
-              Pendaftaran</Link>  
+              <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-5 py-2 rounded-lg font-semibold text-md"><Link to="/daftarsiswa">
+                Pendaftaran</Link>
               </button>
             </div>
           </div>
@@ -63,7 +63,7 @@ function Home() {
       <div className="flex px-20 gap-10 pb-20 pt-16">
 
         <div className="w-1/2">
-         <img src={gambar1} alt="gambar1" className="w-full shadow" />
+          <img src={gambar1} alt="gambar1" className="w-full shadow" />
         </div>
 
 
@@ -99,7 +99,7 @@ function Home() {
           <div className="grid grid-cols-4 gap-28">
 
             <div className="flex flex-col items-center text-center space-y-2">
-             <img src={icon1} alt="Peserta Didik" className="w-36" />
+              <img src={icon1} alt="Peserta Didik" className="w-36" />
               <h1 className="text-4xl font-bold text-white">65</h1>
               <h2 className="text-xl text-white">• Peserta Didik</h2>
             </div>
@@ -140,17 +140,17 @@ function Home() {
 
           <div className="space-y-7 mt-16">
             <div className="flex items-center space-x-6">
-             <img src={icon5} alt="" className="w-9 h-9" />
+              <img src={icon5} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Akademik Berkualitas & Terarah</h2>
             </div>
 
             <div className="flex items-center space-x-6">
-             <img src={icon6} alt="" className="w-9 h-9" />
+              <img src={icon6} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Pengembangan Karakter Kristiani</h2>
             </div>
 
             <div className="flex items-center space-x-6">
-            <img src={icon7} alt="" className="w-9 h-9" />
+              <img src={icon7} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Fasilitas Penunjang yang Memadai</h2>
             </div>
 
@@ -166,29 +166,29 @@ function Home() {
           </div>
         </div>
       </div>
-      
+
       {/* content5 */}
-       <div className="pb-20 px-20 pt-16">
+      <div className="pb-20 px-20 pt-16">
 
-          <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
-            Proses Pendaftaran Siswa Baru <br /> <span className="relative inline-block after:absolute after:left-28 after:bottom-[-12px] after:h-[4px] after:w-[6ch] after:bg-[#FEF600] after:rounded-full">
-              SMAS Kristen Bethel Jakarta
-            </span>
-          </h1>
+        <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
+          Proses Pendaftaran Siswa Baru <br /> <span className="relative inline-block after:absolute after:left-28 after:bottom-[-12px] after:h-[4px] after:w-[6ch] after:bg-[#FEF600] after:rounded-full">
+            SMAS Kristen Bethel Jakarta
+          </span>
+        </h1>
 
-       <div className="flex items-center justify-center">
-       <img src={gambar25} alt="" className="w-[50%]" />
-       </div>
+        <div className="flex items-center justify-center">
+          <img src={gambar25} alt="" className="w-[50%]" />
+        </div>
       </div>
 
       {/* content6 */}
       <div className="pb-20 px-20">
 
-          <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
-            Berita & <span className="relative inline-block after:absolute after:left-6 after:bottom-[-12px] after:h-[4px] after:w-[6ch] after:bg-[#FEF600] after:rounded-full">
-              Informasi
-            </span>
-          </h1>
+        <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
+          Berita & <span className="relative inline-block after:absolute after:left-6 after:bottom-[-12px] after:h-[4px] after:w-[6ch] after:bg-[#FEF600] after:rounded-full">
+            Informasi
+          </span>
+        </h1>
 
         <div className="flex items-center justify-center space-x-10 text-[#101524]">
           {[1, 2, 3].map((item, index) => (
@@ -199,7 +199,7 @@ function Home() {
 
               <div>
                 <img
-                  src={`/src/img/gambar${index + 4}.png`}
+                  src={gambarBerita[index]}
                   alt={`Berita ${index + 1}`}
                   className="w-full h-40 object-cover rounded-t-xl"
                 />
@@ -222,7 +222,7 @@ function Home() {
 
               <div className="flex items-center justify-center mt-4">
                 <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
-                    <Link to="/isiberita">Baca Selengkapnya</Link>
+                  <Link to="/isiberita">Baca Selengkapnya</Link>
                 </button>
               </div>
             </div>
