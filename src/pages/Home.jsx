@@ -1,6 +1,30 @@
 import hero from "../assets/hero-bg.jpg";
 import { Link } from "react-router-dom";
-import gambar1 from "/src/img/gambar1.png"; // sesuaikan path
+import gambar1 from "/src/img/gambar1.png";
+import gambar2 from "../img/gambar2.png";
+import icon1 from "../img/icon1.png";
+import icon2 from "../img/icon2.png";
+import icon3 from "../img/icon3.png";
+import icon4 from "../img/icon4.png";
+import gambar3 from "../img/gambar3.png";
+import icon5 from "../img/icon5.png";
+import icon6 from "../img/icon6.png";
+import icon7 from "../img/icon7.png";
+import icon8 from "../img/icon8.png";
+import icon9 from "../img/icon9.png";
+import gambar25 from "../img/gambar25.png";
+import gambar4 from "../img/gambar4.png";
+import gambar5 from "../img/gambar5.png";
+import gambar6 from "../img/gambar6.png";
+import gambar7 from "../img/gambar7.png";
+import gambar8 from "../img/gambar8.png";
+import gambar9 from "../img/gambar9.png";
+import gambar10 from "../img/gambar10.png";
+import gambar11 from "../img/gambar11.png";
+import gambar12 from "../img/gambar12.png";
+import gambar13 from "../img/gambar13.png";
+import gambar14 from "../img/gambar14.png";
+import icon10 from "../img/icon10.png"; 
 
 
 function Home() {
@@ -68,32 +92,32 @@ function Home() {
       {/* content3 */}
       <div className="relative w-full">
 
-        <img src="/src/img/gambar2.png" alt="Background1" className="w-full h-auto" />
+        <img src={gambar2} alt="Background1" className="w-full h-auto" />
 
 
         <div className="absolute inset-0 flex justify-center items-center">
           <div className="grid grid-cols-4 gap-28">
 
             <div className="flex flex-col items-center text-center space-y-2">
-              <img src="/src/img/icon1.png" alt="Peserta Didik" className="w-36" />
+             <img src={icon1} alt="Peserta Didik" className="w-36" />
               <h1 className="text-4xl font-bold text-white">65</h1>
               <h2 className="text-xl text-white">• Peserta Didik</h2>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-2">
-              <img src="/src/img/icon2.png" alt="Tenaga Pendidik" className="w-36" />
+              <img src={icon2} alt="Tenaga Pendidik" className="w-36" />
               <h1 className="text-4xl font-bold text-white">12</h1>
               <h2 className="text-xl text-white">• Tenaga Pendidik</h2>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-2">
-              <img src="/src/img/icon3.png" alt="Ruang Kelas" className="w-36" />
+              <img src={icon3} alt="Ruang Kelas" className="w-36" />
               <h1 className="text-4xl font-bold text-white">3</h1>
               <h2 className="text-xl text-white">• Ruang Kelas</h2>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-2">
-              <img src="/src/img/icon4.png" alt="Jurusan" className="w-36" />
+              <img src={icon4} alt="Jurusan" className="w-36" />
               <h1 className="text-4xl font-bold text-white">2</h1>
               <h2 className="text-xl text-white">• Jurusan</h2>
             </div>
@@ -104,7 +128,7 @@ function Home() {
       {/* content4 */}
       <div className="pb-20 pt-20 flex gap-24 px-20 bg-[#D9D9D9]">
         <div className="w-[500px]">
-          <img src="/src/img/gambar3.png" alt="" className="w-full" />
+          <img src={gambar3} alt="" className="w-full" />
         </div>
 
         <div className="w-1/2 text-[#101524]">
@@ -116,27 +140,27 @@ function Home() {
 
           <div className="space-y-7 mt-16">
             <div className="flex items-center space-x-6">
-              <img src="/src/img/icon5.png" alt="" className="w-9 h-9" />
+             <img src={icon5} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Akademik Berkualitas & Terarah</h2>
             </div>
 
             <div className="flex items-center space-x-6">
-              <img src="/src/img/icon6.png" alt="" className="w-9 h-9" />
+             <img src={icon6} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Pengembangan Karakter Kristiani</h2>
             </div>
 
             <div className="flex items-center space-x-6">
-              <img src="/src/img/icon7.png" alt="" className="w-9 h-9" />
+            <img src={icon7} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Fasilitas Penunjang yang Memadai</h2>
             </div>
 
             <div className="flex items-center space-x-6">
-              <img src="/src/img/icon8.png" alt="" className="w-9 h-9" />
+              <img src={icon8} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Guru Profesional & Peduli</h2>
             </div>
 
             <div className="flex items-center space-x-6">
-              <img src="/src/img/icon9.png" alt="" className="w-9 h-9" />
+              <img src={icon9} alt="" className="w-9 h-9" />
               <h2 className="text-lg font-medium">Lingkungan Belajar Aman & Nyaman</h2>
             </div>
           </div>
@@ -153,7 +177,7 @@ function Home() {
           </h1>
 
        <div className="flex items-center justify-center">
-        <img src="/src/img/gambar25.png" alt="" className="w-[50%]" />
+       <img src={gambar25} alt="" className="w-[50%]" />
        </div>
       </div>
 
