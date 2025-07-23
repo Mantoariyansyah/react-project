@@ -1,5 +1,5 @@
 import hero from "../assets/hero-bg2.png";
-
+import struk from "../img/strukturorg.png"
 
 function StrukturOrg() {
     return (
@@ -25,7 +25,7 @@ function StrukturOrg() {
 
             {/* content2 */}
             <div className="flex items-center justify-center pt-20 pb-24">
-                <img src="/src/img/strukturorg.png" alt="" className="w-[40%]" />
+                <img src={struk} alt="" className="w-[40%]" />
             </div>
         </div>
 

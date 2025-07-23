@@ -11,6 +11,8 @@ import aula from "../img/gambar16.png";
 import kantin from "../img/gambar17.png";
 import perpus from "../img/gambar18.png";
 import lab from "../img/gambar18.png";
+import gedungUtama from "../img/Foto Gedung Sekolah.png";
+
 
 function Profil() {
     return (
@@ -126,7 +128,7 @@ function Profil() {
                     SMAS KRISTEN BETHEL JAKARTA
                 </h1>
                 <div className="flex items-center justify-center">
-                    <img src="/src/img/Foto Gedung Sekolah.png" alt="" className="w-[80%]" />
+                  <img src={gedungUtama} alt="Gedung Utama" className="w-[80%]" />
                 </div>
                 <div className="px-[123px] pt-14 pb-10 space-y-8">
                     <p className="text-sm font-normal leading-snug tracking-wider">SMAS Kristen Bethel Jakarta adalah sebuah sekolah menengah atas swasta Kristen yang berlokasi di kawasan strategis di Petamburan, Jakarta Pusat. Sekolah ini berdiri dengan tujuan mulia untuk menjadi pusat pendidikan yang tidak hanya mengedepankan prestasi akademik, tetapi juga membentuk karakter siswa yang beriman, berintegritas, dan melayani sesuai dengan nilai-nilai Kristiani.</p>
