@@ -28,6 +28,9 @@ import icon10 from "../img/icon10.png";
 
 
 function Home() {
+
+  const gambarBerita = [gambar4, gambar5, gambar6];
+
   return (
     <div>
 
