@@ -26,6 +26,7 @@ import Kontak from "./pages/Kontak";
 import LayananAdministrasi from "./pages/LayananAdministrasi";
 import ScrollTotop from "./components/ScrollTotop";
 import Osis from "./pages/Osis";
+import Kaldemik from "./pages/Kaldemiik";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/jurusan" element={<Jurusan />} />
         <Route path="/prestasi" element={<Prestasi />} />
+        <Route path="/kaldemik" element={<Kaldemik />} />
         <Route path="/jadwal-pelajaran" element={<JadwalPel />} />
         <Route path="/berita" element={<Berita />} />
         <Route path="/isiberita" element={<IsiBerita />} />

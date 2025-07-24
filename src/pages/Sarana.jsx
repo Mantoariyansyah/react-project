@@ -17,7 +17,7 @@ function Sarana() {
                     backgroundSize: "100% auto",
                 }}
             >
-                <div className="absolute inset-0 flex items-start justify-center px-20 pt-40">
+                <div className="absolute inset-0 flex items-stat justify-center px-20 pt-40">
                     <div className="text-white max-w-2xl text-center">
                         <h1 className="text-2xl font-semibold leading-snug mb-3 text-white">
                             SARANA & PRASARANA

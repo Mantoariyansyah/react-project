@@ -51,12 +51,17 @@ function Home() {
               Sekolah Menengah Atas Swasta Kristen  <br /> Bethel Jakarta
             </h1>
             <div className="flex gap-4">
-              <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-4 py-2 rounded-lg font-semibold text-md">
-                Hubungi Kami
-              </button>
-              <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-5 py-2 rounded-lg font-semibold text-md"><Link to="/daftarsiswa">
-                Pendaftaran</Link>
-              </button>
+              <Link to="/kontak">
+                <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-4 py-2 rounded-lg font-semibold text-md">
+                  Hubungi Kami
+                </button>
+              </Link>
+              <Link to="/daftarsiswa">
+                <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-5 py-2 rounded-lg font-semibold text-md">
+                  Pendaftaran
+                </button>
+              </Link>
+
             </div>
           </div>
         </div>
@@ -224,18 +229,22 @@ function Home() {
               </p>
 
               <div className="flex items-center justify-center mt-4">
-                <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
-                  <Link to="/isiberita">Baca Selengkapnya</Link>
-                </button>
+                <Link to="/isiberita">
+                  <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
+                    Baca Selengkapnya
+                  </button>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-12 flex items-center justify-center">
-          <button className="bg-[#101524] hover:bg-gray-800 text-white px-8 py-2 rounded-lg font-semibold text-md">
-            <Link to="/berita">Lebih Lanjut</Link>
-          </button>
+          <Link to="/berita">
+            <button className="bg-[#101524] hover:bg-gray-800 text-white px-8 py-2 rounded-lg font-semibold text-md">
+              Lebih Lanjut
+            </button>
+          </Link>
         </div>
       </div>
 

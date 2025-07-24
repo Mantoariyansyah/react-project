@@ -1,8 +1,14 @@
 import hero from "../assets/hero-bg2.png";
-
+import gambar24 from "../img/gambar24.png";
+import gambar4 from "../img/gambar4.png";
+import gambar5 from "../img/gambar5.png";
+import gambar6 from "../img/gambar6.png";
 
 
 function IsiBerita() {
+
+    const gambarBerita = [gambar4, gambar5, gambar6];
+
 
     return (
 
@@ -24,8 +30,8 @@ function IsiBerita() {
                     </div>
                 </div>
             </div>
-            
-             {/* content2 */}
+
+            {/* content2 */}
             <div className="pt-16 pb-20">
                 <div className="text-center space-y-4">
                     <h1 className="text-2xl font-bold text-[#101524]">
@@ -35,7 +41,7 @@ function IsiBerita() {
                     <p className="text-medium">Selasa, 1 Oktober 2024</p>
                 </div>
 
-               
+
                 <div className="pt-10">
 
                     <div className="px-[123px]  space-y-8">
@@ -43,7 +49,7 @@ function IsiBerita() {
                         <p className="text-sm font-normal leading-snug tracking-wider">Upacara dimulai pukul 07.30 WIB dengan pembina upacara Kepala Sekolah, yang menyampaikan pesan penting tentang pentingnya memegang teguh nilai-nilai Pancasila dalam kehidupan sehari-hari. Dalam amanatnya, beliau menekankan bahwa Pancasila adalah landasan kehidupan berbangsa dan bernegara yang harus terus dijaga dan diamalkan oleh generasi muda.</p>
                         <div className="flex items-center justify-center">
                             <img
-                                src="/src/img/gambar24.png"
+                                src={gambar24}
                                 alt=""
                                 className="w-[452px] h-[315px] rounded-md shadow"
                             />
@@ -62,7 +68,7 @@ function IsiBerita() {
 
                 <h1 className="text-2xl font-bold mb-6 text-center pb-6 text-[#101524]">
                     <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8ch] after:bg-[#FEF600] after:rounded-full">
-                       Berita & Informasi Lainnya
+                        Berita & Informasi Lainnya
                     </span>
                 </h1>
 
@@ -75,7 +81,7 @@ function IsiBerita() {
 
                             <div>
                                 <img
-                                    src={`/src/img/gambar${index + 4}.png`}
+                                    src={gambarBerita[index]}
                                     alt={`Berita ${index + 1}`}
                                     className="w-full h-40 object-cover rounded-t-xl"
                                 />
@@ -97,8 +103,11 @@ function IsiBerita() {
                             </p>
 
                             <div className="flex items-center justify-center mt-4">
-                                <button className="bg-[#101524] hover:bg-[#101524] text-white px-4 py-2 rounded-lg font-semibold text-md">
-                                    Baca Selengkapnya
+                                <button onClick={() => {
+                                    window.location.reload();
+                                    setTimeout(() => window.scrollTo(0, 0), 0);
+                                }} className="bg-[#101524] hover:bg-[#101524] text-white px-4 py-2 rounded-lg font-semibold text-md">
+                                    baca selengkapnya
                                 </button>
                             </div>
                         </div>

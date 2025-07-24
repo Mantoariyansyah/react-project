@@ -8,7 +8,7 @@ import gambar6 from "../img/gambar6.png";
 
 function Berita() {
 
-     const gambarBerita = [gambar4, gambar5, gambar6];
+    const gambarBerita = [gambar4, gambar5, gambar6];
 
     return (
 
@@ -43,7 +43,7 @@ function Berita() {
                         >
                             <div>
                                 <img
-                                     src={gambarBerita[index]}
+                                    src={gambarBerita[index]}
                                     alt={`Berita ${index + 1}`}
                                     className="w-full h-40 object-cover rounded-t-xl"
                                 />
@@ -65,9 +65,11 @@ function Berita() {
                             </p>
 
                             <div className="flex items-center justify-center mt-4">
-                                <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
-                                    <Link to="/isiberita">Baca Selengkapnya</Link>
-                                </button>
+                                <Link to="/isiberita">
+                                    <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
+                                        Baca Selengkapnya
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -101,9 +103,11 @@ function Berita() {
                             </p>
 
                             <div className="flex items-center justify-center mt-4">
-                                <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
-                                    <Link to="/isiberita">Baca Selengkapnya</Link>
-                                </button>
+                                <Link to="/isiberita">
+                                    <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
+                                        Baca Selengkapnya
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}
@@ -118,7 +122,7 @@ function Berita() {
                         >
                             <div>
                                 <img
-                                     src={gambarBerita[index]}
+                                    src={gambarBerita[index]}
                                     alt={`Berita ${index + 1}`}
                                     className="w-full h-40 object-cover rounded-t-xl"
                                 />
@@ -137,9 +141,11 @@ function Berita() {
                             </p>
 
                             <div className="flex items-center justify-center mt-4">
-                                <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
-                                    <Link to="/isiberita">Baca Selengkapnya</Link>
-                                </button>
+                                <Link to="/isiberita">
+                                    <button className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-md">
+                                        Baca Selengkapnya
+                                    </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

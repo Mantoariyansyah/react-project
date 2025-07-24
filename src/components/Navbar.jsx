@@ -31,7 +31,7 @@ function Navbar() {
   const hoverLink = isScrolled
     ? "hover:bg-[#FEF600] hover:text-black"
     : "hover:bg-[#101524] hover:text-white";
-  const dropdownBg = isScrolled ? "bg-black" : "bg-white";
+  const dropdownBg = isScrolled ? "bg-[#101524]" : "bg-white";
   const dropdownText = isScrolled ? "text-[#FEF600]" : "text-black";
   const dropdownHover = isScrolled
     ? "hover:bg-[#FEF600] hover:text-black"
@@ -75,7 +75,7 @@ function Navbar() {
               items: [
                 { to: "/jurusan", label: "Jurusan" },
                 { to: "/prestasi", label: "Prestasi Siswa" },
-                { to: "/akademik/ekstrakurikuler", label: "Kalender Akademik" },
+                { to: "/kaldemik", label: "Kalender Akademik" },
                 { to: "/jadwal-pelajaran", label: "Jadwal Pelajaran" },
               ],
               width: "w-44",

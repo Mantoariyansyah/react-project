@@ -1,14 +1,7 @@
 import hero from "../assets/hero-bg2.png";
 import gambar23 from "../img/gambar23.png";
 
-
-function JadwalPel() {
-  const handleDownload = () => {
-  const link = document.createElement('a');
-  link.href = '/src/assets/jadpel.pdf';
-  link.download = 'Jadwal-Pelajaran.pdf';
-  link.click();
-};
+function Kaldemik() {
     return (
 
         <div>
@@ -23,7 +16,7 @@ function JadwalPel() {
                 <div className="absolute inset-0 flex items-start justify-center px-20 pt-40">
                     <div className="text-white max-w-2xl text-center">
                         <h1 className="text-2xl font-semibold leading-snug mb-3 text-white">
-                            JADWAL PELAJARAN
+                            KALENDER AKADEMIK
                         </h1>
                         <h2 className="text-md font-medium">SMAS KRISTEN BETHEL JAKARTA</h2>
                     </div>
@@ -31,21 +24,15 @@ function JadwalPel() {
             </div>
 
             {/* content2 */}
-            <div className="pt-30 pb-40">
+            <div className="pt-40 pb-80">
 
-                <div className="flex items-center justify-center ">
-                    <img src={gambar23} alt="" className="w-[60%]" />
-                </div>
+               
 
-                <div className="flex items-center justify-center pt-8">
-                    <button  onClick={handleDownload} className="bg-[#101524] hover:bg-gray-800 text-white px-4 py-2 rounded-lg font-semibold text-sm">
-                        Download
-                    </button>
-                </div>
+               
             </div>
         </div>
 
     );
 }
 
-export default JadwalPel;
+export default Kaldemik;
