@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
-import twett from "../assets/img/twett.png";
+import twett from "../img/twett.png";
 import fb from "../img/fb.png";
 import instagram from "../img/instagram.png";
 import gmail from "../img/gmail.png";
