@@ -8,22 +8,22 @@ import gmail from "../assets/img/gmail.png";
 
 function Footer() {
 
-    useEffect(() => {
+     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 0);
-            setOpenMenu(null);
+          setIsScrolled(window.scrollY > 0);
+          setOpenMenu(null);
         };
-
+    
         const handleClickOutside = () => setOpenMenu(null);
-
+    
         window.addEventListener("scroll", handleScroll);
         window.addEventListener("click", handleClickOutside);
-
+    
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-            window.removeEventListener("click", handleClickOutside);
+          window.removeEventListener("scroll", handleScroll);
+          window.removeEventListener("click", handleClickOutside);
         };
-    }, []);
+      }, []);
 
     return (
         <footer className="bg-[#0B0F1A] text-white pt-10 pb-6 px-32">
