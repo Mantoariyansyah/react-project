@@ -1,10 +1,10 @@
 import hero from "../assets/hero-bg2.png";
 
 // Import gambar-gambar sarana
-import sarana1 from "../assets/img/sarana1.png";
-import sarana2 from "../assets/img/sarana2.png";
-import sarana3 from "../assets/img/sarana3.png";
-import sarana4 from "../assets/img/sarana4.png";
+import sarana1 from "../img/sarana1.png";
+import sarana2 from "../img/sarana2.png";
+import sarana3 from "../img/sarana3.png";
+import sarana4 from "../img/sarana4.png";
 
 function Sarana() {
     return (
