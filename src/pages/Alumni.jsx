@@ -1,5 +1,5 @@
 import hero from "../assets/hero-bg2.png";
-
+import alumnie from "../img/alumni.png";
 
 function Alumni() {
     return (
@@ -28,25 +28,25 @@ function Alumni() {
                 <div className="grid grid-cols-4 gap-20 px-10">
                     {/* Baris 1 */}
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
@@ -54,25 +54,25 @@ function Alumni() {
 
                     {/* Baris 2 */}
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
@@ -80,25 +80,25 @@ function Alumni() {
 
                       {/* Baris 3 */}
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                        <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
                     </div>
                        <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/alumni.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
                         <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
                         <p className="text-xs text-gray-600">Sistem Informasi</p>
