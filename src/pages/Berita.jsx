@@ -9,7 +9,7 @@ import gambar6 from "../img/gambar6.png";
 function Berita() {
 
      const gambarBerita = [gambar4, gambar5, gambar6];
-     
+
     return (
 
         <div>
@@ -82,7 +82,7 @@ function Berita() {
                         >
                             <div>
                                 <img
-                                    src={`/src/img/gambar${index + 4}.png`}
+                                    src={gambarBerita[index]}
                                     alt={`Berita ${index + 1}`}
                                     className="w-full h-40 object-cover rounded-t-xl"
                                 />
@@ -118,7 +118,7 @@ function Berita() {
                         >
                             <div>
                                 <img
-                                    src={`/src/img/gambar${index + 4}.png`}
+                                     src={gambarBerita[index]}
                                     alt={`Berita ${index + 1}`}
                                     className="w-full h-40 object-cover rounded-t-xl"
                                 />
