@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 // Import gambar
-import logo from "/src/assets/logo.png";
+// import logo from "/src/assets/logo.png";
 import twett from "../assets/img/twett.png";
 import fb from "../assets/img/fb.png";
 import instagram from "../assets/img/instagram.png";
@@ -31,7 +31,7 @@ function Footer() {
             <div className="max-w-screen-xl mx-auto grid grid-cols-3 gap-16">
                 <div>
                     <img
-                        src={logo}
+                        src="/src/assets/logo.png"
                         alt="Logo"
                         className="w-24 mb-4"
                     />
