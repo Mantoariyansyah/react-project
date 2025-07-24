@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import fotged from "../img/fotogedungsekolah.png";
-
 import gedung from "../img/gambar15.png";
 import aula from "../img/gambar16.png";
 import kantin from "../img/gambar17.png";
