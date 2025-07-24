@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import logo from "../assets/logo.png";
+
 
 function Footer() {
 
@@ -26,7 +28,7 @@ function Footer() {
 
                 <div>
                     <img
-                        src="/src/assets/logo.png"
+                        src={logo}
                         alt="Logo"
                         className="w-24 mb-4"
                     />
