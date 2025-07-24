@@ -1,5 +1,6 @@
 import hero from "../assets/hero-bg2.png";
-
+import gambar21 from "../img/gambar21.png";
+import gambar22 from "../img/gambar22.png";
 
 function Prestasi() {
     return (
@@ -28,25 +29,25 @@ function Prestasi() {
                 <div className="grid grid-cols-4 gap-14 px-10">
                     
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar21.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar22.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar21.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar22.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
@@ -54,25 +55,25 @@ function Prestasi() {
 
                     
                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar21.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar22.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar21.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar22.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
@@ -80,25 +81,25 @@ function Prestasi() {
 
                     
                         <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar21.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar22.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar21.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
                     </div>
                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/gambar22.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
                         <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
                         <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>

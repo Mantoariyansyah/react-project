@@ -1,5 +1,6 @@
 import hero from "../assets/hero-bg2.png";
-
+import gambar19 from "../img/gambar19.png";
+import gambar20 from "../img/gambar20.png";
 
 
 
@@ -36,7 +37,7 @@ function Jurusan() {
                 </h1>
 
                 <div className="flex items-center justify-center pt-14">
-                    <img src="/src/img/gambar19.png" alt="" className="w-[80%]" />
+                    <img src={gambar19} alt="" className="w-[80%]" />
                 </div>
 
                 <div className="px-[123px] space-y-4 pt-8">
@@ -69,7 +70,7 @@ function Jurusan() {
                 </h1>
 
                 <div className="flex items-center justify-center pt-14">
-                    <img src="/src/img/gambar20.png" alt="" className="w-[80%]" />
+                    <img src={gambar20} alt="" className="w-[80%]" />
                 </div>
 
                 <div className="px-[123px] space-y-4 pt-8">

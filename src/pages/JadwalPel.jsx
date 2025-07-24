@@ -1,5 +1,5 @@
 import hero from "../assets/hero-bg2.png";
-
+import gambar23 from "../img/gambar23.png";
 
 function JadwalPel() {
     return (
@@ -27,7 +27,7 @@ function JadwalPel() {
             <div className="pt-30 pb-40">
 
                 <div className="flex items-center justify-center ">
-                    <img src="/src/img/gambar23.png" alt="" className="w-[60%]" />
+                    <img src={gambar23} alt="" className="w-[60%]" />
                 </div>
 
                 <div className="flex items-center justify-center pt-8">
