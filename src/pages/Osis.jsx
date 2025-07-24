@@ -1,5 +1,5 @@
 import hero from "../assets/hero-bg2.png";
-
+import gambar26 from "../img/Gambar26.png";
 
 function Osis() {
     return (
@@ -25,7 +25,7 @@ function Osis() {
 
             {/* content2 */}
             <div className="flex items-center justify-center pt-24 pb-80">
-                <img src="/src/img/Gambar26.png" alt="" className="w-[50%]" />
+                <img src={gambar26} alt="foto" className="w-[50%]" />
             </div>
         </div>
 

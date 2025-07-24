@@ -1,11 +1,27 @@
 import hero from "../assets/hero-bg2.png";
-
+import ekstra1 from "../img/ekstrakulikuler1.png";
+import ekstra2 from "../img/ekstrakulikuler2.png";
+import ekstra3 from "../img/ekstrakulikuler3.png";
+import ekstra4 from "../img/ekstrakulikuler4.png";
+import ekstra5 from "../img/ekstrakulikuler5.png";
+import ekstra6 from "../img/ekstrakulikuler6.png";
 
 function Ekstrakulikuler() {
-    return (
+    const ekstrakulikulerList = [
+        { img: ekstra1, title: "Bola Basket" },
+        { img: ekstra2, title: "Sepak Bola" },
+        { img: ekstra3, title: "Kerohanian" },
+        { img: ekstra4, title: "Paskibra" },
+        { img: ekstra5, title: "Pramuka" },
+        { img: ekstra6, title: "Bulu Tangkis" },
+        { img: ekstra6, title: "Bola Basket" },
+        { img: ekstra6, title: "Bola Basket" },
+        { img: ekstra6, title: "Bola Basket" },
+    ];
 
+    return (
         <div>
-            {/* content1 */}
+            {/* Header */}
             <div
                 className="min-h-[60vh] bg-no-repeat bg-top bg-contain relative top-14"
                 style={{
@@ -23,243 +39,45 @@ function Ekstrakulikuler() {
                 </div>
             </div>
 
-            {/* content2 */}
+            {/* Content */}
             <div className="pt-30 pb-80 px-20">
                 <div className="grid grid-cols-3 gap-14 px-10">
-                    
-                    <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler1.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Bola Basket</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
+                    {ekstrakulikulerList.map((item, index) => (
+                        <div
+                            className="bg-white rounded-xl shadow shadow-gray-400 p-4"
+                            key={index}
+                        >
+                            <div className="text-center">
+                                <img
+                                    src={item.img}
+                                    alt={item.title}
+                                    className="w-auto object-cover rounded-md mx-auto mb-5"
+                                />
+                                <h2 className="text-md font-semibold text-[#101524]">{item.title}</h2>
                             </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-
-                    </div>
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler2.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Sepak Bola</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
+                            <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
+                                <div className="flex">
+                                    <span className="w-[90px] font-bold">Pembimbing</span>
+                                    <span>: Iyan Sopian, S.pd</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="w-[90px] font-bold">No. Tlpn</span>
+                                    <span>: 085659390050</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="w-[90px] font-bold">Hari</span>
+                                    <span>: Kamis</span>
+                                </div>
+                                <div className="flex">
+                                    <span className="w-[90px] font-bold">Waktu</span>
+                                    <span>: 14.00 - 16.00</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler3.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Kerohanian</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler4.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Paskibra</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-
-                    </div>
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler5.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Pramuka</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler6.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Bulu Tangkis</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-                    </div>
-                   
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler6.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Bola Basket</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler6.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Bola Basket</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-                    </div>
-
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4">
-                        <div className="text-center">
-                            <img src="/src/img/ekstrakulikuler6.png" alt="Guru" className="w-auto object-cover rounded-md mx-auto mb-5" />
-                            <h2 className="text-md font-semibold text-[#101524]">Bola Basket</h2>
-                        </div>
-                        <div className="text-sm text-[#101524] pt-2 px-2 space-y-2">
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Pembimbing</span>
-                                <span>: Iyan Sopian, S.pd</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">No. Tlpn</span>
-                                <span>: 085659390050</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Hari</span>
-                                <span>: Kamis</span>
-                            </div>
-                            <div className="flex">
-                                <span className="w-[90px] font-bold">Waktu</span>
-                                <span>: 14.00 - 16.00</span>
-                            </div>
-                        </div>
-                    </div>
-
-
+                    ))}
                 </div>
             </div>
-
         </div>
-
     );
 }
 
