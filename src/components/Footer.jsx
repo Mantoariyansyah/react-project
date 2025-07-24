@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
+import twit from "../img/twett.png";
+import fb from "../img/fb.png";
+import ins from "../img/instagram.png";
+import gmil from "../img/gmail.png";
 
 
 function Footer() {
@@ -39,10 +43,10 @@ function Footer() {
 
                     <div className="flex gap-3 mt-4">
                         {[
-                            { href: "/", src: "/src/img/twett.png", alt: "Twitter" },
-                            { href: "/", src: "/src/img/fb.png", alt: "Facebook" },
-                            { href: "/", src: "/src/img/instagram.png", alt: "Instagram" },
-                            { href: "/", src: "/src/img/gmail.png", alt: "Email" },
+                            { href: "/", src: {twit}, alt: "Twitter" },
+                            { href: "/", src: {fb}, alt: "Facebook" },
+                            { href: "/", src: {ins}, alt: "Instagram" },
+                            { href: "/", src: {gmil}, alt: "Email" },
                         ].map((item, index) => (
                             <Link
                                 to={item.href}
