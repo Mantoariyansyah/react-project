@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
-import tweet from "../img/twett.png";
+import twett from "../assets/img/twett.png";
+import fb from "../assets/img/fb.png";
+import instagram from "../assets/img/instagram.png";
+import gmail from "../assets/img/gmail.png";
 
 function Footer() {
 
@@ -39,7 +42,7 @@ function Footer() {
 
                     <div className="flex gap-3 mt-4">
                         {[
-                            { href: "/", src: tweet, alt: "Twitter" },
+                            { href: "/", src: twett, alt: "Twitter" },
                             { href: "/", src: "/src/img/fb.png", alt: "Facebook" },
                             { href: "/", src: "/src/img/instagram.png", alt: "Instagram" },
                             { href: "/", src: "/src/img/gmail.png", alt: "Email" },
