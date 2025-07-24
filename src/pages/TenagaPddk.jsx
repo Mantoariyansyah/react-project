@@ -1,5 +1,7 @@
 import hero from "../assets/hero-bg2.png";
-
+import guru1 from "../img/guru 1.png";
+import guru2 from "../img/guru 2.png";
+import guru3 from "../img/guru 3.png";
 
 function TenagaPddk() {
     return (
@@ -28,44 +30,44 @@ function TenagaPddk() {
                 <div className="grid grid-cols-4 gap-20 px-10">
                     {/* Baris 1 */}
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 1.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru1} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 2.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru2} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 3.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru3} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 1.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru1} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
 
                     {/* Baris 2 */}
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 1.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru1} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 2.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru2} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 3.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru3} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 1.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru1} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
@@ -74,7 +76,7 @@ function TenagaPddk() {
                 </div>
                 <div className="flex items-center justify-center pt-20 pb-60">
                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src="/src/img/guru 1.png" alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
+                        <img src={guru1} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
                         <h2 className="text-sm font-semibold text-gray-800">Dra. Joyce Elvira Sihasale</h2>
                         <p className="text-xs text-gray-600">Guru Matematika</p>
                     </div>
