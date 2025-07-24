@@ -1,5 +1,5 @@
 import hero from "../assets/hero-bg2.png";
-
+import gedsej from "../img/Gedungsejarah.png";
 
 
 function Sejarah() {
@@ -37,7 +37,7 @@ function Sejarah() {
                 </div>
 
                  <div className="flex items-center justify-center pt-14 pb-20">
-                    <img src="/src/img/Gedungsejarah.png" alt="" className="w-[80%]" />
+                    <img src={gedsej} alt="" className="w-[80%]" />
                 </div>
             </div>
 
