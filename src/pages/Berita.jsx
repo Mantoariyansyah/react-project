@@ -1,8 +1,15 @@
 import hero from "../assets/hero-bg2.png";
 import { Link } from "react-router-dom";
+import gambar4 from "../img/gambar4.png";
+import gambar5 from "../img/gambar5.png";
+import gambar6 from "../img/gambar6.png";
+
 
 
 function Berita() {
+
+     const gambarBerita = [gambar4, gambar5, gambar6];
+     
     return (
 
         <div>
@@ -36,7 +43,7 @@ function Berita() {
                         >
                             <div>
                                 <img
-                                    src={`/src/img/gambar${index + 4}.png`}
+                                     src={gambarBerita[index]}
                                     alt={`Berita ${index + 1}`}
                                     className="w-full h-40 object-cover rounded-t-xl"
                                 />
