@@ -1,7 +1,17 @@
 import hero from "../assets/hero-bg2.png";
+import { useState } from "react";
+import PopUpSuccess from "../components/PopUpSuccess";
 
 
 function LayananPrestasi() {
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setShowPopup(true);
+    };
+
     return (
 
         <div>
@@ -25,7 +35,7 @@ function LayananPrestasi() {
 
             {/* content2 */}
             <div className="w-full flex justify-center pb-80 pt-30 bg-white">
-                <form className="w-[60%]">
+                <form className="w-[60%]" onSubmit={handleSubmit}>
 
                     <h1 className="text-xl font-bold mb-6">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
@@ -50,6 +60,26 @@ function LayananPrestasi() {
 
                             <div>
                                 <label htmlFor="kategoriPeserta" className="block text-sm font-medium text-[#101524] mb-1">
+                                    Tingkat Prestasi <span className="text-red-500">*</span>
+                                </label>
+
+                                <select
+                                    id="TingkatPrestasi"
+                                    className="w-full px-3 py-2 text-sm border border-gray-400 rounded-md bg-white focus:ring-2 focus:[#101524] focus:outline-none"
+                                    defaultValue=""
+                                >
+                                    <option value="" disabled hidden>Pilih Tingkat Prestasi</option>
+                                    <option value="siswa">Sekolah</option>
+                                    <option value="tim">Kecamatan</option>
+                                    <option value="tim">Kabupaten/Kota</option>
+                                    <option value="tim">Provinsi</option>
+                                    <option value="tim">Nasional</option>
+                                    <option value="tim">Internasional</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label htmlFor="kategoriPeserta" className="block text-sm font-medium text-[#101524] mb-1">
                                     Kategori Peserta <span className="text-red-500">*</span>
                                 </label>
 
@@ -59,7 +89,7 @@ function LayananPrestasi() {
                                     defaultValue=""
                                 >
                                     <option value="" disabled hidden>Pilih Kategori Peserta</option>
-                                    <option value="siswa">Siswa</option>
+                                    <option value="siswa">Individu</option>
                                     <option value="tim">Tim</option>
                                 </select>
                             </div>
@@ -78,6 +108,11 @@ function LayananPrestasi() {
                                 />
                             </div>
 
+
+                        </div>
+
+                        <div className="space-y-4">
+
                             <div>
                                 <label htmlFor="tanggal" className="block text-sm font-medium text-[#101524] mb-1">
                                     Tanggal Prestasi <span className="text-red-500">*</span>
@@ -88,15 +123,12 @@ function LayananPrestasi() {
                                     className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
                                 />
                             </div>
-                        </div>
-
-                        <div className="space-y-4">
 
                             <div>
                                 <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-2">
                                     Foto juara/Sertifikat <span className="text-red-500">*</span>
                                 </label>
-                                <div className="relative w-full h-40 border border-gray-400 rounded-md p-4">
+                                <div className="relative w-full h-46 border border-gray-400 rounded-md p-4">
 
                                     <input
                                         type="file"
@@ -113,7 +145,7 @@ function LayananPrestasi() {
                                 </div>
                             </div>
 
-                            <div className="flex justify-end pt-20">
+                            <div className="flex justify-end pt-2">
                                 <button
                                     type="submit"
                                     className="bg-[#101524] hover:bg-gray-800 text-white px-5 py-2 rounded-lg font-semibold"
@@ -125,6 +157,19 @@ function LayananPrestasi() {
                         </div>
                     </div>
                 </form>
+
+                {/* popup selesai */}
+                {showPopup && (
+                    <PopUpSuccess
+                        title="Selamat Data Anda Tersimpan di SMAS Kristen Bethel Jakarta"
+                        message="Data telah kami terima dan akan segera di proses oleh tim administrasi"
+                        buttonText="Selesai"
+                        onDownload={() => {
+                            // Tidak ada download, langsung ke home
+                            window.location.href = "/";
+                        }}
+                    />
+                )}
             </div>
         </div>
 

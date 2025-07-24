@@ -32,7 +32,7 @@ function DaftarSiswa() {
 
             {/* content2 */}
             <div className="w-full flex justify-center pt-20 bg-white">
-                <form className="w-[60%]">
+                <form className="w-[60%]" onSubmit={handleSubmit}>
 
                     <h1 className="text-xl font-bold mb-6">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
@@ -149,7 +149,7 @@ function DaftarSiswa() {
 
             {/* content3 */}
             <div className="w-full flex justify-center pt-10 bg-white">
-                <form className="w-[60%]">
+                <form className="w-[60%]" onSubmit={handleSubmit}>
 
                     <h1 className="text-xl font-bold mb-6">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
@@ -241,7 +241,7 @@ function DaftarSiswa() {
 
             {/* content4 */}
             <div className="w-full flex justify-center pt-10 pb-60 bg-white">
-                <form className="w-[60%]" onSubmit={handleSubmit}>
+                <form className="w-[60%]" onSubmit={handleSubmit} >
 
                     <h1 className="text-xl font-bold mb-6">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
@@ -276,7 +276,11 @@ function DaftarSiswa() {
                                 />
                             </div>
 
-                            <div>
+                        
+                        </div>
+
+                         <div className="space-y-4">
+                             <div>
                                 <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
                                     Nilai Rata - rata Raport / UN <span className="text-red-500">*</span>
                                 </label>
@@ -306,84 +310,10 @@ function DaftarSiswa() {
                                 />
                             </div>
                         </div>
-
-                        
-                        <div className="space-y-4">
-                            <div>
-                                <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Pas Foto Terbaru <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="file"
-                                    id="fileDokumen"
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    className="w-full text-sm text-gray-500
-                                    file:mr-4 file:py-1.5 file:px-4
-                                    file:rounded-md file:border-0
-                                    file:text-sm file:font-semibold
-                                    file:bg-gray-200 file:text-[#101524]
-                                    hover:file:bg-blue-100
-                                    border border-gray-400 rounded-md"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-1">
-                                    File Akte Kelahiran <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="file"
-                                    id="fileDokumen"
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    className="w-full text-sm text-gray-500
-                                    file:mr-4 file:py-1.5 file:px-4
-                                    file:rounded-md file:border-0
-                                    file:text-sm file:font-semibold
-                                    file:bg-gray-200 file:text-[#101524]
-                                    hover:file:bg-blue-100
-                                    border border-gray-400 rounded-md"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-1">
-                                    File Kartu Keluarga <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="file"
-                                    id="fileDokumen"
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    className="w-full text-sm text-gray-500
-                                    file:mr-4 file:py-1.5 file:px-4
-                                    file:rounded-md file:border-0
-                                    file:text-sm file:font-semibold
-                                    file:bg-gray-200 file:text-[#101524]
-                                    hover:file:bg-blue-100
-                                    border border-gray-400 rounded-md"
-                                />
-                            </div>
-
-                            <div>
-                                <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-1">
-                                    File Ktp Orang Tua <span className="text-red-500">*</span>
-                                </label>
-                                <input
-                                    type="file"
-                                    id="fileDokumen"
-                                    accept=".pdf,.jpg,.jpeg,.png"
-                                    className="w-full text-sm text-gray-500
-                                    file:mr-4 file:py-1.5 file:px-4
-                                    file:rounded-md file:border-0
-                                    file:text-sm file:font-semibold
-                                    file:bg-gray-200 file:text-[#101524]
-                                    hover:file:bg-blue-100
-                                    border border-gray-400 rounded-md"
-                                />
-                            </div>
-                        </div>
+                       
                     </div>
 
-                    <div className="flex justify-end pt-4">
+                    <div className="flex item-center justify-end pt-4">
                         <button
                             type="submit"
                             className="bg-[#101524] hover:bg-gray-500 text-white px-5 py-2 rounded-lg font-semibold"
@@ -394,13 +324,19 @@ function DaftarSiswa() {
 
                 </form>
 
-                {/* popupselesai */}
-                {showPopup && (
+                 {showPopup && (
                     <PopUpSuccess
-                        onClose={() => setShowPopup(false)}
+                        title="Selamat Anda Berhasil Terdaftar di SMAS Kristen Bethel Jakarta"
+                        message="Data pendaftaran Anda telah kami terima. Silakan unduh bukti pendaftaran."
+                        buttonText="Download Bukti"
                         onDownload={() => {
-                            
-                            window.open("/", "_blank");
+                            // Aksi download
+                            const link = document.createElement('a');
+                            link.href = '/files/bukti-pendaftaran.pdf'; // ganti dengan file PDF di public/files
+                            link.download = 'Bukti-Pendaftaran.pdf';
+                            link.click();
+                            // Kembali ke Home
+                            window.location.href = "/";
                         }}
                     />
                 )}

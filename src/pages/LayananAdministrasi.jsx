@@ -1,10 +1,16 @@
 import hero from "../assets/hero-bg2.png";
 import { useState } from "react";
+import PopUpSuccess from "../components/PopUpSuccess";
 
 
 function LayananAdministrasi() {
     const [layananDipilih, setLayananDipilih] = useState(null);
+    const [showPopup, setShowPopup] = useState(false);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setShowPopup(true);
+    };
     return (
 
         <div>
@@ -50,8 +56,8 @@ function LayananAdministrasi() {
             {layananDipilih === "surat" && (
 
                 <div className="w-full flex justify-center pb-[40%] pt-20 bg-white">
-                    <form className="w-[60%]">
-                        
+                    <form className="w-[60%]" onSubmit={handleSubmit}>
+
                         <h1 className="text-xl font-bold mb-6">
                             <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
                                 Data Keterangan Siswa
@@ -72,60 +78,6 @@ function LayananAdministrasi() {
                                         placeholder="Masukkan Nama Lengkap"
                                     />
                                 </div>
-
-                                <div>
-                                    <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
-                                        NISN <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="nisn"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                        placeholder="Masukkan NISN"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="tempat" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Tempat Lahir <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="tempat"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                        placeholder="Masukkan tempat lahir"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="tanggal" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Tanggal Lahir <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="date"
-                                        id="tanggal"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    />
-                                </div>
-
-                            </div>
-
-
-                            <div className="space-y-4">
-                                <div>
-                                    <label htmlFor="gender" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Jenis Kelamin <span className="text-red-500">*</span>
-                                    </label>
-                                    <select
-                                        id="gender"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    >
-                                        <option value="">Pilih jenis kelamin</option>
-                                        <option value="L">Laki-laki</option>
-                                        <option value="P">Perempuan</option>
-                                    </select>
-                                </div>
-
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-[#101524] mb-1">
                                         Email <span className="text-red-500">*</span>
@@ -150,23 +102,29 @@ function LayananAdministrasi() {
                                     />
                                 </div>
 
+
+                            </div>
+
+
+                            <div className="space-y-4">
+
                                 <div>
                                     <label htmlFor="alamat" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Alamat Lengkap <span className="text-red-500">*</span>
+                                        Isi Pesan <span className="text-red-500">*</span>
                                     </label>
                                     <textarea
                                         id="alamat"
                                         rows="2"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none resize-none"
-                                        placeholder="Masukkan alamat lengkap"
+                                        className="w-full px-3 py-8 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none resize-none"
+                                        placeholder="Masukkan isi Keterangan"
                                     ></textarea>
                                 </div>
 
-                                <div className="flex justify-end pt-4 space-x-3">
+                                <div className="flex justify-end pt-16 space-x-3">
 
-                                      <button
+                                    <button
                                         type="submit"
-                                         onClick={() => setLayananDipilih(null)}
+                                        onClick={() => setLayananDipilih(null)}
                                         className="bg-[#EF4444] hover:bg-red-600 text-white px-3 py-2 rounded-lg font-semibold"
                                     >
                                         Kembali
@@ -174,29 +132,28 @@ function LayananAdministrasi() {
 
                                     <button
                                         type="submit"
-                                         onClick={() => setLayananDipilih(null)}
+
                                         className="bg-[#101524] hover:bg-gray-800 text-white px-5 py-2 rounded-lg font-semibold"
                                     >
                                         Kirim
                                     </button>
-
                                 </div>
-
                             </div>
                         </div>
                     </form>
                 </div>
+
             )}
 
 
             {/* content4 */}
             {layananDipilih === "beasiswa" && (
                 <div className="w-full flex justify-center pb-[40%] pt-20 bg-white">
-                    <form className="w-[60%]">
+                    <form className="w-[60%]" onSubmit={handleSubmit}>
 
                         <h1 className="text-xl font-bold mb-6">
                             <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
-                                Data Profil Beasiswa
+                                Data Keterangan Siswa
                             </span>
                         </h1>
 
@@ -214,60 +171,6 @@ function LayananAdministrasi() {
                                         placeholder="Masukkan Nama Lengkap"
                                     />
                                 </div>
-
-                                <div>
-                                    <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
-                                        NISN <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="nisn"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                        placeholder="Masukkan NISN"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="tempat" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Tempat Lahir <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="tempat"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                        placeholder="Masukkan tempat lahir"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="tanggal" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Tanggal Lahir <span className="text-red-500">*</span>
-                                    </label>
-                                    <input
-                                        type="date"
-                                        id="tanggal"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    />
-                                </div>
-
-                            </div>
-
-
-                            <div className="space-y-4">
-                                <div>
-                                    <label htmlFor="gender" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Jenis Kelamin <span className="text-red-500">*</span>
-                                    </label>
-                                    <select
-                                        id="gender"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    >
-                                        <option value="">Pilih jenis kelamin</option>
-                                        <option value="L">Laki-laki</option>
-                                        <option value="P">Perempuan</option>
-                                    </select>
-                                </div>
-
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-[#101524] mb-1">
                                         Email <span className="text-red-500">*</span>
@@ -292,23 +195,29 @@ function LayananAdministrasi() {
                                     />
                                 </div>
 
+
+                            </div>
+
+
+                            <div className="space-y-4">
+
                                 <div>
                                     <label htmlFor="alamat" className="block text-sm font-medium text-[#101524] mb-1">
-                                        Alamat Lengkap <span className="text-red-500">*</span>
+                                        Isi Pesan <span className="text-red-500">*</span>
                                     </label>
                                     <textarea
                                         id="alamat"
                                         rows="2"
-                                        className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none resize-none"
-                                        placeholder="Masukkan alamat lengkap"
+                                        className="w-full px-3 py-8 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none resize-none"
+                                        placeholder="Masukkan isi Keterangan Beasiswa"
                                     ></textarea>
                                 </div>
 
-                                  <div className="flex justify-end pt-4 space-x-3">
+                                <div className="flex justify-end pt-16 space-x-3">
 
-                                      <button
+                                    <button
                                         type="submit"
-                                         onClick={() => setLayananDipilih(null)}
+                                        onClick={() => setLayananDipilih(null)}
                                         className="bg-[#EF4444] hover:bg-red-600 text-white px-3 py-2 rounded-lg font-semibold"
                                     >
                                         Kembali
@@ -316,13 +225,14 @@ function LayananAdministrasi() {
 
                                     <button
                                         type="submit"
-                                         onClick={() => setLayananDipilih(null)}
+
                                         className="bg-[#101524] hover:bg-gray-800 text-white px-5 py-2 rounded-lg font-semibold"
                                     >
                                         Kirim
                                     </button>
 
                                 </div>
+
                             </div>
                         </div>
                     </form>
@@ -330,6 +240,18 @@ function LayananAdministrasi() {
 
             )}
 
+            {/* popup selesai */}
+            {showPopup && (
+                <PopUpSuccess
+                    title="Selamat Data Anda Tersimpan di SMAS Kristen Bethel Jakarta"
+                    message="Data telah kami terima dan akan segera di proses oleh tim administrasi"
+                    buttonText="Selesai"
+                    onDownload={() => {
+                        // Tidak ada download, langsung ke home
+                        window.location.href = "/";
+                    }}
+                />
+            )}
         </div>
 
     );

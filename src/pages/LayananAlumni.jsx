@@ -1,8 +1,16 @@
 import hero from "../assets/hero-bg2.png";
-
+import { useState } from "react";
+import PopUpSuccess from "../components/PopUpSuccess";
 
 
 function LayananAlumni() {
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setShowPopup(true);
+    };
     return (
 
         <div>
@@ -26,7 +34,7 @@ function LayananAlumni() {
 
             {/* content2 */}
             <div className="w-full flex justify-center pb-80 pt-30 bg-white">
-                <form className="w-[60%]">
+                <form className="w-[60%]" onSubmit={handleSubmit}>
 
                     <h1 className="text-xl font-bold mb-6">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
@@ -49,7 +57,7 @@ function LayananAlumni() {
                                 />
                             </div>
 
-                             <div>
+                            <div>
                                 <label htmlFor="tempat" className="block text-sm font-medium text-[#101524] mb-1">
                                     NISN <span className="text-red-500">*</span>
                                 </label>
@@ -79,12 +87,12 @@ function LayananAlumni() {
 
                             <div>
                                 <label htmlFor="tanggal" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Universitas <span className="text-red-500">*</span>
+                                    Instansi <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
                                     id="tanggal"
-                                     placeholder="Masukkan Universitas"
+                                    placeholder="Masukkan Instansi"
                                     className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
                                 />
                             </div>
@@ -92,14 +100,14 @@ function LayananAlumni() {
 
                         <div className="space-y-4">
 
-                             <div>
+                            <div>
                                 <label htmlFor="tanggal" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Jurusan <span className="text-red-500">*</span>
+                                    Bidang <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
                                     id="tanggal"
-                                     placeholder="Masukkan Jurusan"
+                                    placeholder="Masukkan Bidang"
                                     className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
                                 />
                             </div>
@@ -108,7 +116,7 @@ function LayananAlumni() {
                                 <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-2">
                                     Foto juara/Sertifikat <span className="text-red-500">*</span>
                                 </label>
-                                <div className="relative w-full h-40 border border-gray-400 rounded-md p-4">
+                                <div className="relative w-full h-45 border border-gray-400 rounded-md p-4">
 
                                     <input
                                         type="file"
@@ -137,6 +145,19 @@ function LayananAlumni() {
                         </div>
                     </div>
                 </form>
+
+                {/* popup selesai */}
+                {showPopup && (
+                    <PopUpSuccess
+                        title="Selamat Data Anda Tersimpan di SMAS Kristen Bethel Jakarta"
+                        message="Data telah kami terima dan akan segera di proses oleh tim administrasi"
+                        buttonText="Selesai"
+                        onDownload={() => {
+                            // Tidak ada download, langsung ke home
+                            window.location.href = "/";
+                        }}
+                    />
+                )}
             </div>
         </div>
 

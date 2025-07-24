@@ -1,7 +1,16 @@
 import hero from "../assets/hero-bg2.png";
+import { useState } from "react";
+import PopUpSuccess from "../components/PopUpSuccess";
 
 
 function Kontak() {
+
+      const [showPopup, setShowPopup] = useState(false);
+    
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            setShowPopup(true);
+        };
     return (
 
         <div>
@@ -25,7 +34,7 @@ function Kontak() {
 
             {/* content2 */}
             <div className="pt-30 pb-80 px-20">
-                <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow shadow-gray-400">
+                <form className="max-w-md mx-auto p-6 bg-white rounded-lg shadow shadow-gray-400" onSubmit={handleSubmit}>
              
                     <div className="mb-4">
                         <label className="block text-sm font-semibold text-black mb-1">
@@ -83,7 +92,20 @@ function Kontak() {
                             Kirim
                         </button>
                     </div>
-                </div>
+                </form>
+
+                 {/* popup selesai */}
+                {showPopup && (
+                    <PopUpSuccess
+                        title="Selamat Data Anda Tersimpan di SMAS Kristen Bethel Jakarta"
+                        message="Data telah kami terima dan akan segera di proses oleh tim administrasi"
+                        buttonText="Selesai"
+                        onDownload={() => {
+                            // Tidak ada download, langsung ke home
+                            window.location.href = "/";
+                        }}
+                    />
+                )}
             </div>
 
         </div>

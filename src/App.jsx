@@ -27,6 +27,7 @@ import LayananAdministrasi from "./pages/LayananAdministrasi";
 import ScrollTotop from "./components/ScrollTotop";
 import Osis from "./pages/Osis";
 import Kaldemik from "./pages/Kaldemiik";
+import AlurPendaf from "./pages/AlurPendaf";
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
       <ScrollTotop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/alurpendaftaran" element={<AlurPendaf />} />
         <Route path="/daftarsiswa" element={<DaftarSiswa />} />
         <Route path="/profil" element={<Profil />} />
         <Route path="/sejarah" element={<Sejarah />} />

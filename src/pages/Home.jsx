@@ -56,7 +56,7 @@ function Home() {
                   Hubungi Kami
                 </button>
               </Link>
-              <Link to="/daftarsiswa">
+              <Link to="/alurpendaftaran">
                 <button className="bg-[#FEF600] hover:bg-yellow-500 text-[#101524] px-5 py-2 rounded-lg font-semibold text-md">
                   Pendaftaran
                 </button>
