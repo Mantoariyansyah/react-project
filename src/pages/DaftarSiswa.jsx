@@ -2,11 +2,11 @@ import hero from "../assets/hero-bg2.png";
 import { useState } from "react";
 import PopUpSuccess from "../components/PopUpSuccess";
 import { daftarSiswa } from "../services/api";
+import { jsPDF } from "jspdf";
 
 function DaftarSiswa() {
-    const [showPopup, setShowPopup] = useState(false);
+   const [showPopup, setShowPopup] = useState(false);
 
-    // State untuk data form dengan key API
     const [formData, setFormData] = useState({
         nama_lengkap: "",
         nisn: "",
@@ -28,7 +28,6 @@ function DaftarSiswa() {
         ijazah_smp: null,
     });
 
-    // Fungsi handle input change
     const handleChange = (e) => {
         const { id, value, files } = e.target;
         if (files) {
@@ -38,23 +37,67 @@ function DaftarSiswa() {
         }
     };
 
-    // Submit form ke API
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         try {
             const formDataToSend = new FormData();
             for (const key in formData) {
                 formDataToSend.append(key, formData[key]);
             }
-
-            await daftarSiswa(formDataToSend); // POST data ke API
-            setShowPopup(true); // Tampilkan pop-up
+            await daftarSiswa(formDataToSend); 
+            setShowPopup(true);
         } catch (error) {
             console.error("Gagal mendaftar:", error);
             alert("Terjadi kesalahan saat mengirim data.");
         }
     };
+
+    const handleDownloadPDF = () => {
+        const doc = new jsPDF();
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(16);
+        doc.text("Bukti Pendaftaran Siswa", 20, 20);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(12);
+
+        // Tambahkan data form
+        let y = 40;
+        const addLine = (label, value) => {
+            doc.text(`${label}: ${value || "-"}`, 20, y);
+            y += 10;
+        };
+
+        addLine("Nama Lengkap", formData.nama_lengkap);
+        addLine("NISN", formData.nisn);
+        addLine("Tempat Lahir", formData.tempat_lahir);
+        addLine("Tanggal Lahir", formData.tanggal_lahir);
+        addLine("Jenis Kelamin", formData.jenis_kelamin === "male" ? "Laki-laki" : "Perempuan");
+        addLine("Email", formData.email);
+        addLine("No Telepon", formData.no_telepon);
+        addLine("Alamat Lengkap", formData.alamat_lengkap);
+        addLine("Nama Ayah", formData.nama_ayah);
+        addLine("Pekerjaan Ayah", formData.pekerjaan_ayah);
+        addLine("No Telepon Ayah", formData.no_telepon_ayah);
+        addLine("Nama Ibu", formData.nama_ibu);
+        addLine("Pekerjaan Ibu", formData.pekerjaan_ibu);
+        addLine("No Telepon Ibu", formData.no_telepon_ibu);
+        addLine("Asal SMP", formData.asal_sekolah);
+        addLine("Tahun Lulus", formData.tahun_lulus);
+        addLine("Nilai Rata-rata", formData.nilai_un);
+
+        // Tanda tangan atau catatan
+        y += 20;
+        doc.setFontSize(10);
+        doc.text("SMAS Kristen Bethel Jakarta", 20, y);
+        y += 10;
+        doc.text(`Tanggal Cetak: ${new Date().toLocaleDateString()}`, 20, y);
+
+        // Simpan PDF
+        doc.save("Bukti-Pendaftaran.pdf");
+        window.location.href = "/";
+    };
+
 
     return (
         <div>
@@ -368,19 +411,12 @@ function DaftarSiswa() {
                     </div>
                 </form>
             </div>
-
-            {showPopup && (
+  {showPopup && (
                 <PopUpSuccess
                     title="Selamat Anda Berhasil Terdaftar di SMAS Kristen Bethel Jakarta"
                     message="Data pendaftaran Anda telah kami terima. Silakan unduh bukti pendaftaran."
                     buttonText="Download Bukti"
-                    onDownload={() => {
-                        const link = document.createElement("a");
-                        link.href = "/files/bukti-pendaftaran.pdf";
-                        link.download = "Bukti-Pendaftaran.pdf";
-                        link.click();
-                        window.location.href = "/";
-                    }}
+                    onDownload={handleDownloadPDF}
                 />
             )}
         </div>
