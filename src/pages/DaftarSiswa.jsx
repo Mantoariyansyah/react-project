@@ -6,7 +6,7 @@ import { daftarSiswa } from "../services/api";
 function DaftarSiswa() {
     const [showPopup, setShowPopup] = useState(false);
 
-    // State untuk data form dengan key API temanmu
+    // State untuk data form dengan key API
     const [formData, setFormData] = useState({
         nama_lengkap: "",
         nisn: "",
@@ -351,13 +351,12 @@ function DaftarSiswa() {
                                     type="file"
                                     id="ijazah_smp"
                                     onChange={handleChange}
-                                    accept=".pdf,.jpg,.jpeg,.png"
+                                    accept=".pdf"
                                     className="w-full text-sm text-gray-500 file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-200 file:text-[#101524] hover:file:bg-blue-100 border border-gray-400 rounded-md"
                                 />
                             </div>
                         </div>
                     </div>
-
 
                     <div className="flex item-center justify-end pt-4">
                         <button
