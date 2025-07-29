@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Buat instance Axios
 const API = axios.create({
-  baseURL: "https://103.127.133.53//api", // URL API backend
+  baseURL: "http://103.127.133.53:5002/api", // URL API backend
 });
 
 // Fungsi POST
