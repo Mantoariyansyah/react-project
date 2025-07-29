@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import twett from "../img/twett.png";
 import fb from "../img/fb.png";
@@ -7,28 +6,10 @@ import instagram from "../img/instagram.png";
 import gmail from "../img/gmail.png";
 
 function Footer() {
-
-     useEffect(() => {
-        const handleScroll = () => {
-          setIsScrolled(window.scrollY > 0);
-          setOpenMenu(null);
-        };
-    
-        const handleClickOutside = () => setOpenMenu(null);
-    
-        window.addEventListener("scroll", handleScroll);
-        window.addEventListener("click", handleClickOutside);
-    
-        return () => {
-          window.removeEventListener("scroll", handleScroll);
-          window.removeEventListener("click", handleClickOutside);
-        };
-      }, []);
-
     return (
         <footer className="bg-[#0B0F1A] text-white pt-10 pb-6 px-32">
             <div className="max-w-screen-xl mx-auto grid grid-cols-3 gap-16">
-
+                {/* Kolom 1 */}
                 <div>
                     <img
                         src={logo}
@@ -62,6 +43,7 @@ function Footer() {
                     </div>
                 </div>
 
+                {/* Kolom 2 */}
                 <div className="pl-20">
                     <h3 className="text-lg font-bold text-[#FEF600] mb-4">Jelajah</h3>
                     <ul className="space-y-2 text-sm font-medium">
@@ -74,7 +56,7 @@ function Footer() {
                     </ul>
                 </div>
 
-
+                {/* Kolom 3 */}
                 <div>
                     <h3 className="text-lg font-bold text-[#FEF600] mb-4">Kontak</h3>
                     <p className="text-sm mb-2 font-light">Telepon : (021) 5707687</p>
@@ -86,7 +68,6 @@ function Footer() {
                     </p>
                 </div>
             </div>
-
 
             <hr className="border-gray-500 my-6 border-1" />
             <p className="text-center text-sm text-[#FEF600] font-light">

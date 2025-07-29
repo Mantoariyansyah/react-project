@@ -1,16 +1,62 @@
 import hero from "../assets/hero-bg2.png";
 import { useState } from "react";
 import PopUpSuccess from "../components/PopUpSuccess";
+import { daftarSiswa } from "../services/api";
 
 function DaftarSiswa() {
     const [showPopup, setShowPopup] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setShowPopup(true);
-    };
-    return (
+    // State untuk data form dengan key API temanmu
+    const [formData, setFormData] = useState({
+        nama_lengkap: "",
+        nisn: "",
+        tempat_lahir: "",
+        tanggal_lahir: "",
+        jenis_kelamin: "",
+        email: "",
+        no_telepon: "",
+        alamat_lengkap: "",
+        nama_ayah: "",
+        pekerjaan_ayah: "",
+        no_telepon_ayah: "",
+        nama_ibu: "",
+        pekerjaan_ibu: "",
+        no_telepon_ibu: "",
+        asal_sekolah: "",
+        tahun_lulus: "",
+        nilai_un: "",
+        ijazah_smp: null,
+    });
 
+    // Fungsi handle input change
+    const handleChange = (e) => {
+        const { id, value, files } = e.target;
+        if (files) {
+            setFormData({ ...formData, [id]: files[0] });
+        } else {
+            setFormData({ ...formData, [id]: value });
+        }
+    };
+
+    // Submit form ke API
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const formDataToSend = new FormData();
+            for (const key in formData) {
+                formDataToSend.append(key, formData[key]);
+            }
+
+            await daftarSiswa(formDataToSend); // POST data ke API
+            setShowPopup(true); // Tampilkan pop-up
+        } catch (error) {
+            console.error("Gagal mendaftar:", error);
+            alert("Terjadi kesalahan saat mengirim data.");
+        }
+    };
+
+    return (
         <div>
             {/* content1 */}
             <div
@@ -25,15 +71,16 @@ function DaftarSiswa() {
                         <h1 className="text-2xl font-semibold leading-snug mb-3 text-white">
                             DAFTAR SISWA
                         </h1>
-                        <h2 className="text-md font-medium">SMAS KRISTEN BETHEL JAKARTA</h2>
+                        <h2 className="text-md font-medium">
+                            SMAS KRISTEN BETHEL JAKARTA
+                        </h2>
                     </div>
                 </div>
             </div>
 
-            {/* content2 */}
-            <div className="w-full flex justify-center pt-20 bg-white">
+            {/* content2 - Data Profil */}
+            <div className="w-full flex justify-center pt-20 pb-52 bg-white">
                 <form className="w-[60%]" onSubmit={handleSubmit}>
-
                     <h1 className="text-xl font-bold mb-6">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
                             Data Profil
@@ -41,20 +88,20 @@ function DaftarSiswa() {
                     </h1>
 
                     <div className="grid grid-cols-2 gap-16">
-                    
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="nama" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="nama_lengkap" className="block text-sm font-medium text-[#101524] mb-1">
                                     Nama Lengkap <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nama"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="nama_lengkap"
+                                    value={formData.nama_lengkap}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                     placeholder="Masukkan Nama Lengkap"
                                 />
                             </div>
-
                             <div>
                                 <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
                                     NISN <span className="text-red-500">*</span>
@@ -62,51 +109,55 @@ function DaftarSiswa() {
                                 <input
                                     type="text"
                                     id="nisn"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    value={formData.nisn}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                     placeholder="Masukkan NISN"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="tempat" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="tempat_lahir" className="block text-sm font-medium text-[#101524] mb-1">
                                     Tempat Lahir <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="tempat"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="tempat_lahir"
+                                    value={formData.tempat_lahir}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                     placeholder="Masukkan tempat lahir"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="tanggal" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="tanggal_lahir" className="block text-sm font-medium text-[#101524] mb-1">
                                     Tanggal Lahir <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="date"
-                                    id="tanggal"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="tanggal_lahir"
+                                    value={formData.tanggal_lahir}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
                         </div>
 
-                    
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="gender" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="jenis_kelamin" className="block text-sm font-medium text-[#101524] mb-1">
                                     Jenis Kelamin <span className="text-red-500">*</span>
                                 </label>
                                 <select
-                                    id="gender"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="jenis_kelamin"
+                                    value={formData.jenis_kelamin}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 >
                                     <option value="">Pilih jenis kelamin</option>
-                                    <option value="L">Laki-laki</option>
-                                    <option value="P">Perempuan</option>
+                                    <option value="male">Laki-laki</option>
+                                    <option value="female">Perempuan</option>
                                 </select>
                             </div>
-
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium text-[#101524] mb-1">
                                     Email <span className="text-red-500">*</span>
@@ -114,204 +165,199 @@ function DaftarSiswa() {
                                 <input
                                     type="email"
                                     id="email"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                     placeholder="Masukkan email"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="telepon" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="no_telepon" className="block text-sm font-medium text-[#101524] mb-1">
                                     No Telepon <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="tel"
-                                    id="telepon"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan nomor telepone"
+                                    id="no_telepon"
+                                    value={formData.no_telepon}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
+                                    placeholder="Masukkan nomor telepon"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="alamat" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="alamat_lengkap" className="block text-sm font-medium text-[#101524] mb-1">
                                     Alamat Lengkap <span className="text-red-500">*</span>
                                 </label>
                                 <textarea
-                                    id="alamat"
+                                    id="alamat_lengkap"
+                                    value={formData.alamat_lengkap}
+                                    onChange={handleChange}
                                     rows="2"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none resize-none"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md resize-none"
                                     placeholder="Masukkan alamat lengkap"
                                 ></textarea>
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
 
-            {/* content3 */}
-            <div className="w-full flex justify-center pt-10 bg-white">
-                <form className="w-[60%]" onSubmit={handleSubmit}>
-
-                    <h1 className="text-xl font-bold mb-6">
+                    {/* content3 - Data Orang Tua */}
+                    <h1 className="text-xl font-bold my-6 pt-10">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
                             Data Orang Tua
                         </span>
                     </h1>
 
                     <div className="grid grid-cols-2 gap-16">
-                        
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="nama" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="nama_ayah" className="block text-sm font-medium text-[#101524] mb-1">
                                     Nama Ayah <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nama"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="nama_ayah"
+                                    value={formData.nama_ayah}
+                                    onChange={handleChange}
                                     placeholder="Masukkan Nama Ayah"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Pekerjaan <span className="text-red-500">*</span>
+                                <label htmlFor="pekerjaan_ayah" className="block text-sm font-medium text-[#101524] mb-1">
+                                    Pekerjaan Ayah <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nisn"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan Pekerjaan"
+                                    id="pekerjaan_ayah"
+                                    value={formData.pekerjaan_ayah}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan Pekerjaan Ayah"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="telepon" className="block text-sm font-medium text-[#101524] mb-1">
-                                    No Telepon <span className="text-red-500">*</span>
+                                <label htmlFor="no_telepon_ayah" className="block text-sm font-medium text-[#101524] mb-1">
+                                    No Telepon Ayah <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="tel"
-                                    id="telepon"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan nomor telepone"
+                                    id="no_telepon_ayah"
+                                    value={formData.no_telepon_ayah}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan No Telepon Ayah"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
                         </div>
 
-                        
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="nama" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="nama_ibu" className="block text-sm font-medium text-[#101524] mb-1">
                                     Nama Ibu <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nama"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="nama_ibu"
+                                    value={formData.nama_ibu}
+                                    onChange={handleChange}
                                     placeholder="Masukkan Nama Ibu"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Pekerjaan <span className="text-red-500">*</span>
+                                <label htmlFor="pekerjaan_ibu" className="block text-sm font-medium text-[#101524] mb-1">
+                                    Pekerjaan Ibu <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nisn"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan Pekerjaan"
+                                    id="pekerjaan_ibu"
+                                    value={formData.pekerjaan_ibu}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan Pekerjaan Ibu"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="telepon" className="block text-sm font-medium text-[#101524] mb-1">
-                                    No Telepon <span className="text-red-500">*</span>
+                                <label htmlFor="no_telepon_ibu" className="block text-sm font-medium text-[#101524] mb-1">
+                                    No Telepon Ibu <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="tel"
-                                    id="telepon"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan nomor telepone"
+                                    id="no_telepon_ibu"
+                                    value={formData.no_telepon_ibu}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan No Telepon Ibu"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
                         </div>
                     </div>
-                </form>
-            </div>
 
-            {/* content4 */}
-            <div className="w-full flex justify-center pt-10 pb-60 bg-white">
-                <form className="w-[60%]" onSubmit={handleSubmit} >
-
-                    <h1 className="text-xl font-bold mb-6">
+                    {/* content4 - Data Dokumen */}
+                    <h1 className="text-xl font-bold my-6 pt-10">
                         <span className="relative inline-block after:absolute after:left-0 after:bottom-[-12px] after:h-[4px] after:w-[8.5ch] after:bg-[#FEF600] after:rounded-full">
                             Data Dokumen
                         </span>
                     </h1>
 
                     <div className="grid grid-cols-2 gap-16">
-                        
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="asalSekolah" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Asal Sekolah SMP <span className="text-red-500">*</span>
+                                <label htmlFor="asal_sekolah" className="block text-sm font-medium text-[#101524] mb-1">
+                                    Asal SMP <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nama"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan Nama Sekolah"
+                                    id="asal_sekolah"
+                                    value={formData.asal_sekolah}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan Asal SMP"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="tahunLulus" className="block text-sm font-medium text-[#101524] mb-1">
+                                <label htmlFor="tahun_lulus" className="block text-sm font-medium text-[#101524] mb-1">
                                     Tahun Lulus <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="tahun"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
+                                    id="tahun_lulus"
+                                    value={formData.tahun_lulus}
+                                    onChange={handleChange}
                                     placeholder="Masukkan Tahun Lulus"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
-                        
                         </div>
-
-                         <div className="space-y-4">
-                             <div>
-                                <label htmlFor="nisn" className="block text-sm font-medium text-[#101524] mb-1">
-                                    Nilai Rata - rata Raport / UN <span className="text-red-500">*</span>
+                        <div className="space-y-4">
+                            <div>
+                                <label htmlFor="nilai_un" className="block text-sm font-medium text-[#101524] mb-1">
+                                    Nilai Rata-rata <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"
-                                    id="nilai"
-                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md focus:ring-2 focus:[#101524] focus:outline-none"
-                                    placeholder="Masukkan Nilai"
+                                    id="nilai_un"
+                                    value={formData.nilai_un}
+                                    onChange={handleChange}
+                                    placeholder="Masukkan Nilai Rata-rata"
+                                    className="w-full px-3 py-1.5 text-sm border border-gray-400 rounded-md"
                                 />
                             </div>
-
                             <div>
-                                <label htmlFor="fileDokumen" className="block text-sm font-medium text-[#101524] mb-1">
-                                    File Ijazah SMP <span className="text-red-500">*</span>
+                                <label htmlFor="ijazah_smp" className="block text-sm font-medium text-[#101524] mb-1">
+                                    Unggah Ijazah SMP <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="file"
-                                    id="fileDokumen"
+                                    id="ijazah_smp"
+                                    onChange={handleChange}
                                     accept=".pdf,.jpg,.jpeg,.png"
-                                    className="w-full text-sm text-gray-500
-                                    file:mr-4 file:py-1.5 file:px-4
-                                    file:rounded-md file:border-0
-                                    file:text-sm file:font-semibold
-                                    file:bg-gray-200 file:text-[#101524]
-                                    hover:file:bg-blue-100
-                                    border border-gray-400 rounded-md"
+                                    className="w-full text-sm text-gray-500 file:mr-4 file:py-1.5 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-gray-200 file:text-[#101524] hover:file:bg-blue-100 border border-gray-400 rounded-md"
                                 />
                             </div>
                         </div>
-                       
                     </div>
+
 
                     <div className="flex item-center justify-end pt-4">
                         <button
@@ -321,36 +367,25 @@ function DaftarSiswa() {
                             Kirim
                         </button>
                     </div>
-
                 </form>
-
-                 {showPopup && (
-                    <PopUpSuccess
-                        title="Selamat Anda Berhasil Terdaftar di SMAS Kristen Bethel Jakarta"
-                        message="Data pendaftaran Anda telah kami terima. Silakan unduh bukti pendaftaran."
-                        buttonText="Download Bukti"
-                        onDownload={() => {
-                            // Aksi download
-                            const link = document.createElement('a');
-                            link.href = '/files/bukti-pendaftaran.pdf'; // ganti dengan file PDF di public/files
-                            link.download = 'Bukti-Pendaftaran.pdf';
-                            link.click();
-                            // Kembali ke Home
-                            window.location.href = "/";
-                        }}
-                    />
-                )}
             </div>
 
-
-
-
-
+            {showPopup && (
+                <PopUpSuccess
+                    title="Selamat Anda Berhasil Terdaftar di SMAS Kristen Bethel Jakarta"
+                    message="Data pendaftaran Anda telah kami terima. Silakan unduh bukti pendaftaran."
+                    buttonText="Download Bukti"
+                    onDownload={() => {
+                        const link = document.createElement("a");
+                        link.href = "/files/bukti-pendaftaran.pdf";
+                        link.download = "Bukti-Pendaftaran.pdf";
+                        link.click();
+                        window.location.href = "/";
+                    }}
+                />
+            )}
         </div>
-
-
     );
-
 }
 
 export default DaftarSiswa;
