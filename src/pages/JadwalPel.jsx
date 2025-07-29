@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { jadPel } from "../services/api";
 
 function JadwalPel() {
-  const [fileUrl, setFileUrl] = useState(null);
+  const [fileUrl, setFileUrl] = useState(gambar23); // Default langsung pakai gambar23
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -13,14 +13,15 @@ function JadwalPel() {
         setLoading(true);
         const response = await jadPel();
 
+        // Jika API punya file_url gunakan itu, jika tidak pakai gambar lokal
         if (response.data && response.data.file_url) {
           setFileUrl(response.data.file_url);
         } else {
-          setFileUrl(null);
+          setFileUrl(gambar23);
         }
       } catch (err) {
         console.error("Gagal memuat jadwal:", err);
-        setFileUrl(null);
+        setFileUrl(gambar23);
       } finally {
         setLoading(false);
       }
@@ -33,9 +34,10 @@ function JadwalPel() {
       alert("File jadwal belum tersedia.");
       return;
     }
+
     const link = document.createElement("a");
     link.href = fileUrl;
-    link.setAttribute("download", "Jadwal-Pelajaran.pdf");
+    link.setAttribute("download", "Jadwal-Pelajaran.jpg"); // Jika gambar pakai .jpg/.png
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -64,7 +66,7 @@ function JadwalPel() {
       {/* CONTENT */}
       <div className="pt-30 pb-40">
         <div className="flex items-center justify-center">
-          <img src={gambar23} alt="Jadwal Pelajaran" className="w-[60%]" />
+          <img src={fileUrl} alt="Jadwal Pelajaran" className="w-[60%]" />
         </div>
 
         <div className="flex items-center justify-center pt-8">
