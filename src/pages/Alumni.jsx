@@ -1,9 +1,28 @@
 import hero from "../assets/hero-bg2.png";
 import alumnie from "../img/alumni.png";
+import { useEffect, useState } from "react";
+import { aloemni } from "../services/api";
 
 function Alumni() {
-    return (
+    const [alumniData, setAlumniData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchAlumni = async () => {
+            try {
+                const response = await aloemni();
+                setAlumniData(response.data.data || []); // Sesuaikan dengan struktur API
+            } catch (error) {
+                console.error("Gagal mengambil data alumni:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchAlumni();
+    }, []);
+
+    return (
         <div>
             {/* content1 */}
             <div
@@ -25,90 +44,37 @@ function Alumni() {
 
             {/* content2 */}
             <div className="pt-30 pb-20 px-20">
-                <div className="grid grid-cols-4 gap-20 px-10">
-                    {/* Baris 1 */}
-                    <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
+                {loading ? (
+                    <p className="text-center text-gray-600">Memuat data alumni...</p>
+                ) : alumniData.length > 0 ? (
+                    <div className="grid grid-cols-4 gap-20 px-10">
+                        {alumniData.map((alumni, index) => (
+                            <div
+                                key={index}
+                                className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center"
+                            >
+                                <img
+                                    src={alumni.foto ? alumni.foto : alumnie}
+                                    alt={alumni.nama_lengkap}
+                                    className="w-auto h-40 object-cover rounded-md mx-auto mb-5"
+                                />
+                                <h2 className="text-sm font-semibold text-gray-800">
+                                    {alumni.nama_lengkap}
+                                </h2>
+                                <p className="text-xs text-gray-600 pt-2">
+                                    {alumni.instansi_sekarang}
+                                </p>
+                                <p className="text-xs text-gray-600">
+                                    {alumni.bidang_sekarang}
+                                </p>
+                            </div>
+                        ))}
                     </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                    <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-
-                    {/* Baris 2 */}
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                    <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-
-                      {/* Baris 3 */}
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-                       <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={alumnie}  alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Anggi Sondang</h2>
-                        <p className="text-xs text-gray-600 pt-2">UPN Veteran Jakarta</p>
-                        <p className="text-xs text-gray-600">Sistem Informasi</p>
-                    </div>
-
-                </div>
+                ) : (
+                    <p className="text-center text-gray-600">Tidak ada data alumni.</p>
+                )}
             </div>
-
         </div>
-
     );
 }
 

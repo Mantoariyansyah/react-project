@@ -7,16 +7,20 @@ function JadwalPel() {
   const [fileUrl, setFileUrl] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
   useEffect(() => {
     const fetchJadwal = async () => {
       try {
         setLoading(true);
-        const response = await jadPel(); 
-       
-        setFileUrl(response.data.file_url);
+        const response = await jadPel();
+
+        if (response.data && response.data.file_url) {
+          setFileUrl(response.data.file_url);
+        } else {
+          setFileUrl(null);
+        }
       } catch (err) {
         console.error("Gagal memuat jadwal:", err);
+        setFileUrl(null);
       } finally {
         setLoading(false);
       }
@@ -39,7 +43,7 @@ function JadwalPel() {
 
   return (
     <div>
-      {/* content1 */}
+      {/* HEADER */}
       <div
         className="min-h-[60vh] bg-no-repeat bg-top bg-contain relative top-14"
         style={{
@@ -52,17 +56,15 @@ function JadwalPel() {
             <h1 className="text-2xl font-semibold leading-snug mb-3 text-white">
               JADWAL PELAJARAN
             </h1>
-            <h2 className="text-md font-medium">
-              SMAS KRISTEN BETHEL JAKARTA
-            </h2>
+            <h2 className="text-md font-medium">SMAS KRISTEN BETHEL JAKARTA</h2>
           </div>
         </div>
       </div>
 
-      {/* content2 */}
+      {/* CONTENT */}
       <div className="pt-30 pb-40">
-        <div className="flex items-center justify-center ">
-          <img src={gambar23} alt="" className="w-[60%]" />
+        <div className="flex items-center justify-center">
+          <img src={gambar23} alt="Jadwal Pelajaran" className="w-[60%]" />
         </div>
 
         <div className="flex items-center justify-center pt-8">

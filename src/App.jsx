@@ -51,7 +51,7 @@ function App() {
         <Route path="/kaldemik" element={<Kaldemik />} />
         <Route path="/jadwal-pelajaran" element={<JadwalPel />} />
         <Route path="/berita" element={<Berita />} />
-        <Route path="/isiberita" element={<IsiBerita />} />
+         <Route path="/isiberita/:id" element={<IsiBerita />} />
         <Route path="/galeri" element={<Galeri />} />
         <Route path="/osis" element={<Osis />} />
         <Route path="/ekstrakulikuler" element={<Ekstrakulikuler />} />

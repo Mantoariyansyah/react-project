@@ -1,12 +1,30 @@
 import hero from "../assets/hero-bg2.png";
 import gambar21 from "../img/gambar21.png";
-import gambar22 from "../img/gambar22.png";
+import { useEffect, useState } from "react";
+import { prestasiList } from "../services/api";
 
 function Prestasi() {
-    return (
+    const [prestasiData, setPrestasiData] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchPrestasi = async () => {
+            try {
+                const response = await prestasiList();
+                setPrestasiData(response.data.data || []); // Pastikan sesuai response API
+            } catch (error) {
+                console.error("Gagal mengambil data prestasi:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPrestasi();
+    }, []);
+
+    return (
         <div>
-            {/* content1 */}
+            {/* HEADER */}
             <div
                 className="min-h-[60vh] bg-no-repeat bg-top bg-contain relative top-14"
                 style={{
@@ -19,97 +37,49 @@ function Prestasi() {
                         <h1 className="text-2xl font-semibold leading-snug mb-3 text-white">
                             PRESTASI SISWA
                         </h1>
-                        <h2 className="text-md font-medium">SMAS KRISTEN BETHEL JAKARTA</h2>
+                        <h2 className="text-md font-medium">
+                            SMAS KRISTEN BETHEL JAKARTA
+                        </h2>
                     </div>
                 </div>
             </div>
 
-            {/* content2 */}
+            {/* CONTENT */}
             <div className="pt-30 pb-80 px-20">
-                <div className="grid grid-cols-4 gap-14 px-10">
-                    
-                    <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
+                {loading ? (
+                    <p className="text-center text-gray-600">Memuat data prestasi...</p>
+                ) : prestasiData.length > 0 ? (
+                    <div className="grid grid-cols-4 gap-14 px-10">
+                        {prestasiData.map((prestasi, index) => (
+                            <div
+                                key={index}
+                                className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center"
+                            >
+                                <img
+                                    src={prestasi.foto ? prestasi.foto : gambar21}
+                                    alt={prestasi.nama_prestasi}
+                                    className="w-auto h-40 object-cover rounded-md mx-auto mb-5"
+                                />
+                                <h2 className="text-sm font-semibold text-gray-800">
+                                    {prestasi.nama_prestasi}
+                                </h2>
+                                <p className="text-xs text-gray-600 pt-2 px-2">
+                                    {prestasi.nama_siswa}
+                                </p>
+                                <p className="text-xs text-gray-600 pt-4">
+                                    {new Date(prestasi.tanggal_prestasi).toLocaleDateString(
+                                        "id-ID",
+                                        { weekday: "long", day: "numeric", month: "long", year: "numeric" }
+                                    )}
+                                </p>
+                            </div>
+                        ))}
                     </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-
-                    
-                      <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-
-                    
-                        <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar21} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Paskibraka</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita, Jessica, Aurelia, Jasmin, Nurul, Nazla</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-                     <div className="bg-white rounded-xl shadow shadow-gray-400 p-4 text-center">
-                        <img src={gambar22} alt="Guru" className="w-auto h-40 object-cover rounded-md mx-auto mb-5" />
-                        <h2 className="text-sm font-semibold text-gray-800">Juara 1 Nasional Matematika</h2>
-                        <p className="text-xs text-gray-600 pt-2 px-2">Anggita Sondang</p>
-                        <p className="text-xs text-gray-600 pt-4">Selasa, 20 April 2024</p>
-                    </div>
-
-                </div>
+                ) : (
+                    <p className="text-center text-gray-600">Tidak ada data prestasi.</p>
+                )}
             </div>
-
         </div>
-
     );
 }
 
